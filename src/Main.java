@@ -1,16 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-
-        int amount = 15794; //стоимость билета
-        int step = 20; // количество рублей для одной бонусной мили
-        int bonus;
-        if (amount >= (step)) {
-            bonus = amount / step;
-        } else {
-            bonus = 0;
-        }
-        System.out.println("начислено бонусов " + (bonus));
-
+        BonusMilesService service = new BonusMilesService();
+        int price = 15_340;
+        int miles = service.calculate(price); // должно получиться 500
+        System.out.println(miles);
     }
 }
-
